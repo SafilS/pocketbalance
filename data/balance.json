@@ -1,0 +1,15 @@
+{
+  "initialBalance": 1000000,
+  "balance": 900000,
+  "transactions": [
+    {
+      "id": "1795285122559",
+      "type": "DEBIT",
+      "amount": 100000,
+      "balanceAfter": 900000,
+      "sms": "Your account has been debited INR 1000",
+      "createdAt": "2026-11-21T18:18:42.559Z"
+    }
+  ],
+  "createdAt": "2026-11-21T18:14:47.909Z"
+}
