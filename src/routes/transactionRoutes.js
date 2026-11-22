@@ -7,15 +7,17 @@ const {
 } = require("../services/transactionService");
 
 router.post("/", (req, res) => {
-    console.log("Transaction endpoint reached");
-    console.log("Request body:", req.body);
-
     try {
-        const sms = req.body.sms || req.body.SMS;
+        const sms = req.body?.sms || req.body?.SMS;
+
+        if (!sms) {
+            return res.status(400).json({
+                success: false,
+                message: "SMS content is missing"
+            });
+        }
+
         const result = processTransaction(sms);
-
-        console.log("Transaction processed:", result);
-
         res.json(result);
 
     } catch (error) {
