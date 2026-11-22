@@ -18,9 +18,10 @@ const BALANCE_FILE = path.join(DATA_DIR, "balance.json");
 
 // Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/transactions", transactionRoutes);
-app.use(express.urlencoded({ extended: true }));
+
 // Ensure data directory exists
 if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
