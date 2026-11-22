@@ -1,7 +1,6 @@
 
 const express = require("express");
 const router = express.Router();
-const { sms } = req.body;
 
 const {
     processTransaction
@@ -9,7 +8,7 @@ const {
 
 router.post("/", (req, res) => {
     try {
-        const { sms } = req.body;
+        const sms = req.body.sms || req.body.SMS;
 
         const result = processTransaction(sms);
 
