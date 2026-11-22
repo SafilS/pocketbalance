@@ -6,7 +6,12 @@ function parseBankSMS(sms) {
 
     const text = sms.toLowerCase();
 
-    const debitKeywords = ["debited", "withdrawn", "spent"];
+    const debitKeywords = [
+        "debited",
+        "withdrawn",
+        "spent",
+        "sent"
+    ];
     const creditKeywords = ["credited", "deposited", "received"];
 
     const isDebit = debitKeywords.some(keyword => text.includes(keyword));
